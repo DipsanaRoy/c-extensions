@@ -9,18 +9,17 @@ Welcome to **C Extensions**! This repository is a collection of beginner-focused
 
 ---
 
-## 📂 Folder Overview
+## 📂 Folder Overview (with working links)
 
-/
-├─ 📁 [CE001_Loops](https://github.com/DipsanaRoy/c-extensions/tree/main/CE001_Loops)
-├─ 📁 [CE002_Strings](https://github.com/DipsanaRoy/c-extensions/tree/main/CE002_Strings)
-├─ 📁 [CE003_File_Operations](https://github.com/DipsanaRoy/c-extensions/tree/main/CE003_File_Operations)
-├─ 📁 [CE003_Try_Out](https://github.com/DipsanaRoy/c-extensions/tree/main/CE003_Try_Out)
-├─ 📁 [CE004_Directory](https://github.com/DipsanaRoy/c-extensions/tree/main/CE004_Directory)
-├─ 📁 [CE005_goto](https://github.com/DipsanaRoy/c-extensions/tree/main/CE005_goto)
-├─ 📁 [CE006_Recursion](https://github.com/DipsanaRoy/c-extensions/tree/main/CE006_Recursion)
-├─ 📁 [CE007_Math_Functions](https://github.com/DipsanaRoy/c-extensions/tree/main/CE007_Math_Functions)
-└─ 📁 [CE008_Matrix](https://github.com/DipsanaRoy/c-extensions/tree/main/CE008_Matrix)
+- 📁 [CE001_Loops](https://github.com/DipsanaRoy/c-extensions/tree/main/CE001_Loops)  
+- 📁 [CE002_Strings](https://github.com/DipsanaRoy/c-extensions/tree/main/CE002_Strings)  
+- 📁 [CE003_File_Operations](https://github.com/DipsanaRoy/c-extensions/tree/main/CE003_File_Operations)  
+- 📁 [CE003_Try_Out](https://github.com/DipsanaRoy/c-extensions/tree/main/CE003_Try_Out)  
+- 📁 [CE004_Directory](https://github.com/DipsanaRoy/c-extensions/tree/main/CE004_Directory)  
+- 📁 [CE005_goto](https://github.com/DipsanaRoy/c-extensions/tree/main/CE005_goto)  
+- 📁 [CE006_Recursion](https://github.com/DipsanaRoy/c-extensions/tree/main/CE006_Recursion)  
+- 📁 [CE007_Math_Functions](https://github.com/DipsanaRoy/c-extensions/tree/main/CE007_Math_Functions)  
+- 📁 [CE008_Matrix](https://github.com/DipsanaRoy/c-extensions/tree/main/CE008_Matrix)
 
 ---
 
