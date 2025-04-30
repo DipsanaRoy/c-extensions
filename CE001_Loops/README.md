@@ -7,7 +7,7 @@
 
 ## Useful Links:
 
-- [CE1 Notes](https://github.com/DipsanaRoy/c-extensions/main/tree/CE001_Loops/CE1_NOTES.MD)
+- [CE1 Notes](https://github.com/DipsanaRoy/c-extensions/blob/main/CE001_Loops/CE1_NOTES.MD)
 
 *Happy Learning!*
 
