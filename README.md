@@ -9,7 +9,7 @@ Welcome to **C Extensions**! This repository is a collection of beginner-focused
 
 ---
 
-## 📂 Folder Overview (with working links)
+## 📂 Folder Overview (with links)
 
 - 📁 [CE001_Loops](https://github.com/DipsanaRoy/c-extensions/tree/main/CE001_Loops)  
 - 📁 [CE002_Strings](https://github.com/DipsanaRoy/c-extensions/tree/main/CE002_Strings)  
