@@ -5,7 +5,7 @@
 
 ## Useful Links:
 
-- [CT3 Notes](https://github.com/DipsanaRoy/c-extensions/main/tree/CE003_Try_Out/CT3_NOTES.md)
+- [CT3 Notes](https://github.com/DipsanaRoy/c-extensions/blob/main/CE003_Try_Out/CT3_NOTES.md)
 
 *Happy Learning!*
 
