@@ -7,7 +7,7 @@
 
 ## Useful Links:
 
-- [CE8 Notes](https://github.com/DipsanaRoy/c-extensions/main/tree/CE008_Matrix/CE8_NOTES.md)
+- [CE8 Notes](https://github.com/DipsanaRoy/c-extensions/blob/main/CE008_Matrix/CE8_NOTES.md)
 
 *Happy Learning!*
 
