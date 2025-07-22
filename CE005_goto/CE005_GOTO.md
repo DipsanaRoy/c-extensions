@@ -1,12 +1,11 @@
+# CE005. `goto` Statement in C
 
----
+## Definition  
 
-# CE5. `goto` Statement in C
-
-## Definition:  
 `goto` is a control statement used to **jump to a labeled part** of the program.
 
-## Syntax:
+## Syntax
+
 ```c
 goto label;
 // ...
@@ -14,7 +13,8 @@ label:
     // Code to execute
 ```
 
-### Example:
+### Example
+
 ```c
 #include <stdio.h>
 
@@ -32,17 +32,20 @@ label:
 }
 ```
 
-### Output:
-```
+### Output
+
+```text
 Jumped to the label!
 ```
 
 ## Why `goto` is Controversial?
+
 - ❌ Makes code hard to read ("spaghetti code").
 - ❌ Harder debugging and tracing.
 - ✅ Sometimes useful for error handling in C.
 
-## Pro Tip:
+## Pro Tip
+
 ✨ Avoid using `goto` unless absolutely necessary!
 
 ---
