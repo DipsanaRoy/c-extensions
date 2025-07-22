@@ -1,4 +1,4 @@
-// CE2. Convert a long-strings to long
+// CE2.3. Convert a long-strings to long
 #include <stdio.h>
 #include <stdlib.h>
 

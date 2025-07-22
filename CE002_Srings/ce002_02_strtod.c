@@ -1,4 +1,4 @@
-// CE2. Convert a double-string to double
+// CE2.2. Convert a double-string to double
 #include <stdio.h>
 #include <stdlib.h>
 

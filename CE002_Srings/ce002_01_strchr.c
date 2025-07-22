@@ -1,4 +1,4 @@
-// CE2. Show only strings which contains no more than two 'a'
+// CE2.1. Show only strings which contains no more than two 'a'
 #include <stdio.h>
 #include <string.h>
 
