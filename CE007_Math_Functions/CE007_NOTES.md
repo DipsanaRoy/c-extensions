@@ -1,7 +1,4 @@
-
----
-
-# CE7. Absolute Value Functions in C
+# CE007. Absolute Value Functions in C
 
 | Function   | Works With      | Header       |
 |------------|-----------------|--------------|
@@ -12,7 +9,8 @@
 | `fabsf(x)` | `float`         | `<math.h>`   |
 | `fabsl(x)` | `long double`   | `<math.h>`   |
 
-## Example:
+## Example
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,5 +26,3 @@ int main() {
     return 0;
 }
 ```
-
----
