@@ -1,5 +1,0 @@
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro illo, necessitatibus repellat consequatur architecto vero nam quos accusamus perspiciatis delectus recusandae autem enim, sapiente rem dolorem, minima magni.
-121 3132
-31313
-32.987
-Hello 42 -99 3.14 -1.5e3 world +7.0 +9 abc123
