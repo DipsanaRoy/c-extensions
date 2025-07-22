@@ -4,7 +4,7 @@
 
 int main()
 {
-    const char *path = "D:/Coding/C/learn-c-with-practice/Extensions_C"; // provide the directory's 'relative' or 'full' path
+    const char *path = "D:/Coding/C/learn-c-with-practice0000/Extensions_C"; // provide the directory's 'relative' or 'full' path
     
     DIR *dir = opendir(path); // 'Open' the directory
     if (dir == NULL)
@@ -24,3 +24,5 @@ int main()
     closedir(dir); // 'Close' the directory
     return 0;
 }
+
+

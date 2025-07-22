@@ -1,13 +1,10 @@
-
----
-
-## 📁 CE4 – Directory Handling in C
+# 📁 CE004 – Directory Handling in C
 
 This mini-guide helps you learn how to **open**, **read**, **change**, and **close** directories using C. Great for beginners exploring how files and folders work programmatically!
 
 ---
 
-### 🛣️ What is a "Path"?
+## 🛣️ What is a "Path"?
 
 A **path** is like an address to a folder or file on your computer.
 
@@ -18,7 +15,7 @@ A **path** is like an address to a folder or file on your computer.
 
 ---
 
-### 📌 Functions Overview
+## 📌 Functions Overview
 
 | Function             | Purpose                               | Header         |
 |----------------------|---------------------------------------|----------------|
@@ -31,7 +28,7 @@ A **path** is like an address to a folder or file on your computer.
 
 ---
 
-### ✅ Example 1: Open, Read, Close a Directory
+## ✅ Example 1: Open, Read, Close a Directory
 
 ```c
 DIR *dir = opendir("your_path_here");
@@ -45,7 +42,8 @@ closedir(dir);
 ```
 
 🖨️ **Sample Output**:
-```
+
+```text
 .
 ..
 main.c
@@ -59,7 +57,7 @@ folder1
 
 ---
 
-### ✅ Example 2: Change Working Directory & Read It
+## ✅ Example 2: Change Working Directory & Read It
 
 ```c
 if (chdir("path/to/your/directory") == 0) {
@@ -79,7 +77,7 @@ if (chdir("path/to/your/directory") == 0) {
 
 ---
 
-### 💡 Tips
+## 💡 Tips
 
 - Always check if `opendir()` or `readdir()` returns `NULL`.
 - For filtering files only:  

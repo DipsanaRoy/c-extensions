@@ -1,7 +1,4 @@
-
----
-
-# CE4. 📚 Linux Filesystem: Device Types, Inodes, and File Information
+# CE004. 📚 Linux Filesystem: Device Types, Inodes, and File Information
 
 ---
 
@@ -12,19 +9,20 @@ In **Linux**, the `DT_BLK` (**Directory Type: Block Device**) is defined in `dir
 | Macro        | Meaning                                       |
 |:-------------|:----------------------------------------------|
 | `DT_REG`     | Regular file (normal file)                    |
-| `DT_DIR`     | Directory                                      |
+| `DT_DIR`     | Directory                                     |
 | `DT_LNK`     | Symbolic link (shortcut)                      |
-| `DT_BLK`     | Block device (e.g., HDD, SSD, USB storage)     |
-| `DT_CHR`     | Character device (e.g., keyboard, mouse)       |
-| `DT_FIFO`    | Named pipe (FIFO special file)                 |
-| `DT_SOCK`    | Socket file (for network communication)        |
-| `DT_UNKNOWN` | Unknown type (if info not available)           |
+| `DT_BLK`     | Block device (e.g., HDD, SSD, USB storage)    |
+| `DT_CHR`     | Character device (e.g., keyboard, mouse)      |
+| `DT_FIFO`    | Named pipe (FIFO special file)                |
+| `DT_SOCK`    | Socket file (for network communication)       |
+| `DT_UNKNOWN` | Unknown type (if info not available)          |
 
 ---
 
 ## 🛜 Linux Filesystem View
 
 Linux **treats everything as a file**, including:
+
 - Storage devices (block devices)
 - Serial ports (character devices)
 - Pipes (communication channels)
@@ -69,6 +67,7 @@ These **macros** are used to **check the type of a file** based on file mode inf
 | `S_ISLNK(mode)` | Symbolic link (soft link) |
 
 Example:
+
 ```c
 if (S_ISDIR(fileStat.st_mode)) {
     printf("It's a directory!\n");
@@ -83,12 +82,14 @@ if (S_ISDIR(fileStat.st_mode)) {
 - It fills a `struct stat` with many fields.
 
 Example:
+
 ```c
 struct stat fileStat;
 stat("myfile.txt", &fileStat);
 ```
 
 **Important fields:**
+
 - `fileStat.st_size` ➔ Size in bytes
 - `fileStat.st_mode` ➔ Type and permission bits
 - `fileStat.st_ino` ➔ Inode number (valid mainly in Unix/Linux)
