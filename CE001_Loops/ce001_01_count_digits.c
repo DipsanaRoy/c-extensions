@@ -1,4 +1,4 @@
-// CE1. Count number of digits in a number
+// CE1.1. Count number of digits in a number
 #include <stdio.h>
 
 int count_digits(int num)
