@@ -1,12 +1,7 @@
-
----
-
 # Kindly Read the Notes Before Proceeding with the Example Programs for Better Understanding
 
-## Useful Links:
+## Useful Links
 
-- [CT3 Notes](https://github.com/DipsanaRoy/c-extensions/blob/main/CE003_Try_Out/CT3_NOTES.md)
+- [CT003 Notes](https://github.com/DipsanaRoy/c-extensions/blob/main/CE0000003_Try_Out/CT003_NOTES.md)
 
 *Happy Learning!*
-
----

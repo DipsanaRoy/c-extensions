@@ -1,7 +1,4 @@
-
----
-
-## CT3. What is `*token - '0'`?
+# CT003. What is `*token - '0'`?
 
 - `*token` → means the **current character** in the string (for example `'5'`, `'8'`, etc.).
 - `'0'` → is the **character** `'0'`, whose **ASCII code** is **48**.
@@ -10,7 +7,7 @@ When you do `*token - '0'`, you **convert a character digit into its numeric val
 
 ---
 
-### Example:
+## Example
 
 Suppose:
 
@@ -29,7 +26,7 @@ Suppose:
 
 If `*token = '5'`, then:
 
-```
+```text
 *token - '0'
 = '5' - '0'
 = 53 - 48
@@ -49,7 +46,7 @@ Otherwise, you would be mistakenly adding ASCII codes!
 
 ---
 
-### 🌟 Visual:
+### 🌟 Visual
 
 | What you have (char) | What you need (int) | How to get  |
 |:---------------------|:--------------------|:------------|
@@ -57,7 +54,7 @@ Otherwise, you would be mistakenly adding ASCII codes!
 
 ---
 
-## ⚡ Final shortcut memory tip:
+## ⚡ Final shortcut memory tip
 
 > **Characters '0' to '9' are in order** in ASCII.  
 > Subtracting `'0'` **normalizes** them to real numbers `0` to `9`.
