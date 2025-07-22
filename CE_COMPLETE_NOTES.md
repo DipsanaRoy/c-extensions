@@ -1,7 +1,4 @@
-
----
-
-# CE2. C String Functions Cheat Sheet
+# CE002. C String Functions Cheat Sheet
 
 This mini-guide covers three useful C standard library functions for handling strings and converting them to numbers: `strchr()`, `strtol()`, and `strtod()`.
 
@@ -20,14 +17,16 @@ char *strchr(const char *str, int ch);
 **How it works**:  
 Scans `str` for the character `ch` and returns a pointer to the *first match*.
 
-### ✅ Example:
+### ✅ Example
+
 ```c
 char *text = "hello";
 char *p = strchr(text, 'l');  // Points to the first 'l'
 printf("%s", p);              // Output: "llo"
 ```
 
-### 💡 Tips:
+### 💡 Tips
+
 - Returns `NULL` if the character isn’t found.
 - Can be used to split or search strings easily.
 
@@ -46,7 +45,8 @@ long strtol(const char *str, char **endptr, int base);
 **How it works**:  
 Reads characters in `str` until it hits a non-number (or end), converts them to a long integer using the specified `base`.
 
-### ✅ Example:
+### ✅ Example
+
 ```c
 char *str = "123abc";
 char *endptr;
@@ -54,7 +54,8 @@ long val = strtol(str, &endptr, 10);  // val = 123
 printf("Rest: %s", endptr);           // Output: "abc"
 ```
 
-### 💡 Tips:
+### 💡 Tips
+
 - Use `endptr` to find out where the number parsing stopped.
 - Common `base` values: `10` (decimal), `16` (hex), `0` (auto-detects base like `0x` or `0`).
 
@@ -73,7 +74,8 @@ double strtod(const char *str, char **endptr);
 **How it works**:  
 Similar to `strtol`, but handles floating-point numbers.
 
-### ✅ Example:
+### ✅ Example
+
 ```c
 char *str = "3.14pie";
 char *end;
@@ -81,7 +83,8 @@ double val = strtod(str, &end);  // val = 3.14
 printf("Rest: %s", end);         // Output: "pie"
 ```
 
-### 💡 Tips:
+### 💡 Tips
+
 - Handles scientific notation (e.g., `"1.2e3"` → `1200.0`).
 - Useful for parsing user input with decimal numbers.
 
@@ -91,13 +94,15 @@ printf("Rest: %s", end);         // Output: "pie"
 
 You can use **nested `strchr()`** calls to find the *second, third,* etc., occurrence of a character in a string.
 
-### ✅ Example:
+### ✅ Example
+
 ```c
 if (strchr(strchr(strchr(line, 'a') + 1, 'a') + 1, 'a') == NULL)
     puts(line);  // Prints if there are 2 or fewer 'a's
 ```
 
-### Breakdown — Step-by-step :
+### Breakdown — Step-by-step
+
 1. **`strchr(lines[i], 'a')`**  
    → Finds the **first 'a'** in the string.
 
@@ -110,7 +115,8 @@ if (strchr(strchr(strchr(line, 'a') + 1, 'a') + 1, 'a') == NULL)
 4. **Check `== NULL`**  
    → If the **third 'a' does not exist**, the string contains **2 or fewer 'a's**.
 
-### ⚠️ Warning:  
+### ⚠️ Warning  
+
 If `'a'` is not found at any step, `strchr()` returns `NULL`.  
 Doing `NULL + 1` causes **undefined behavior**, so use this trick **only when you’re sure the character exists enough times**, or **add checks** before deeper nesting.
 
@@ -120,11 +126,11 @@ Doing `NULL + 1` causes **undefined behavior**, so use this trick **only when yo
 
 ---
 
-# CE3. File I/O
+# CE003. File I/O
 
-I'm glad that you've come so far! File I/O in C can be quite powerful, and there are several useful functions and techniques for various tasks. 
+I'm glad that you've come so far! File I/O in C can be quite powerful, and there are several useful functions and techniques for various tasks.
 
-## Introduction:
+## Introduction
 
 File operations can be performed on any type of files, not limited to text files, but each file type must be treated in its own way. For example, text files store human-readable data in character or lines, while binary files contain raw data in bytes, such as images or executables.
 
@@ -132,7 +138,7 @@ To perform file operations correctly, you need to use appropriate file modes to 
 
 ---
 
-## 💡 Tips:
+## 💡 Tips
 
 - **"r" = read**, **"w" = write**, **"a" = append**  
 - **"+" = read + write access**  
@@ -179,6 +185,7 @@ Functions like `fseek()` and `ftell()` are used to move around in a file and det
 ### 🔁 `fseek()` – Move the File Position Indicator
 
 **Syntax:**
+
 ```c
 int fseek(FILE *stream, long offset, int origin);
 ```
@@ -196,12 +203,14 @@ Moves the file pointer to a specific byte offset from a given reference point (`
 | `SEEK_END`    | End of the file        |
 
 > **Note:**  
+>
 > - A *positive* `offset` moves forward.  
 > - A *negative* `offset` moves backward (valid with `SEEK_CUR` or `SEEK_END` only).
 
 ---
 
 ### ✅ Example Usage
+
 ```c
 fseek(file, 5, SEEK_SET);   // Moves to 6th byte from start (0-based)
 fseek(file, -3, SEEK_CUR);  // Moves 3 bytes back from current position
@@ -210,7 +219,7 @@ fseek(file, 0, SEEK_END);   // Moves to the end of the file
 
 ---
 
-## 3. Binary File I/O: 
+## 3. Binary File I/O
 
 You can read and write binary data to files using functions like `fread` and `fwrite`. This is useful for working with non-text data or custom data structures.
 
@@ -222,7 +231,8 @@ In C, **`fread`** and **`fwrite`** are used to read and write binary data to and
 
 **`fread`** reads data from a file into a buffer, and **`fwrite`** writes data from a buffer to a file.
 
-#### Example:
+#### Example
+
 ```c
 // Writing binary data to a file
 FILE *file = fopen("data.bin", "wb");  // Open file for writing in binary mode
@@ -245,7 +255,8 @@ fclose(file);
 
 Before working with a file, you must check if it was opened successfully. If the file doesn’t exist or couldn’t be opened, the file pointer will be `NULL`. You should always check this to avoid errors.
 
-### Example:
+### Example
+
 ```c
 FILE *file = fopen("data.txt", "r");  // Try to open the file in read mode
 if (file == NULL) {  // Check if the file couldn't be opened
@@ -253,15 +264,18 @@ if (file == NULL) {  // Check if the file couldn't be opened
     return 1;  // Exit if the file doesn't exist
 }
 ```
+
 - **`fopen`**: Opens the file. If it fails, it returns `NULL`, and that's why we check it.
 - **`perror`**: Prints a description of the error, such as "File not found."
 
 ---
 
 ### 5. **`fflush` in File I/O**  
+
 The **`fflush`** function is used to flush the output buffer, meaning it forces any buffered data to be written to the file immediately. This can be helpful in cases where you want to ensure that data is written to disk right away, like after a critical write operation.
 
 **Example**:
+
 ```c
 FILE *file = fopen("output.txt", "w");
 fprintf(file, "Hello, World!");
@@ -280,12 +294,13 @@ String functions like **`strtol`**, **`strtod`**, and **`strchr`** help you work
 
 ---
 
-## 7. File Permissions:
+## 7. File Permissions
+
    Be aware of file permissions and security considerations when working with files. Ensure that your code has the necessary permissions to read/write files.
 
 ---
 
-### Summary:
+### Summary
 
 - **`fread`** and **`fwrite`** handle reading and writing binary data (e.g., images, custom data structures) to and from files.
 - **File validation**: Always check if the file is opened successfully (check for `NULL`).
@@ -295,7 +310,7 @@ String functions like **`strtol`**, **`strtod`**, and **`strchr`** help you work
 
 ---
 
-## CT3. What is `*token - '0'`?
+# CT003. What is `*token - '0'`?
 
 - `*token` → means the **current character** in the string (for example `'5'`, `'8'`, etc.).
 - `'0'` → is the **character** `'0'`, whose **ASCII code** is **48**.
@@ -304,7 +319,7 @@ When you do `*token - '0'`, you **convert a character digit into its numeric val
 
 ---
 
-### Example:
+## Example
 
 Suppose:
 
@@ -323,7 +338,7 @@ Suppose:
 
 If `*token = '5'`, then:
 
-```
+```text
 *token - '0'
 = '5' - '0'
 = 53 - 48
@@ -343,7 +358,7 @@ Otherwise, you would be mistakenly adding ASCII codes!
 
 ---
 
-### 🌟 Visual:
+### 🌟 Visual
 
 | What you have (char) | What you need (int) | How to get  |
 |:---------------------|:--------------------|:------------|
@@ -351,20 +366,20 @@ Otherwise, you would be mistakenly adding ASCII codes!
 
 ---
 
-## ⚡ Final shortcut memory tip:
+## ⚡ Final shortcut memory tip
 
 > **Characters '0' to '9' are in order** in ASCII.  
 > Subtracting `'0'` **normalizes** them to real numbers `0` to `9`.
 
 ---
 
-## 📁 CE4 – Directory Handling in C
+# 📁 CE004 – Directory Handling in C
 
 This mini-guide helps you learn how to **open**, **read**, **change**, and **close** directories using C. Great for beginners exploring how files and folders work programmatically!
 
 ---
 
-### 🛣️ What is a "Path"?
+## 🛣️ What is a "Path"?
 
 A **path** is like an address to a folder or file on your computer.
 
@@ -375,7 +390,7 @@ A **path** is like an address to a folder or file on your computer.
 
 ---
 
-### 📌 Functions Overview
+## 📌 Functions Overview
 
 | Function             | Purpose                               | Header         |
 |----------------------|---------------------------------------|----------------|
@@ -388,7 +403,7 @@ A **path** is like an address to a folder or file on your computer.
 
 ---
 
-### ✅ Example 1: Open, Read, Close a Directory
+## ✅ Example 1: Open, Read, Close a Directory
 
 ```c
 DIR *dir = opendir("your_path_here");
@@ -402,7 +417,8 @@ closedir(dir);
 ```
 
 🖨️ **Sample Output**:
-```
+
+```text
 .
 ..
 main.c
@@ -416,7 +432,7 @@ folder1
 
 ---
 
-### ✅ Example 2: Change Working Directory & Read It
+## ✅ Example 2: Change Working Directory & Read It
 
 ```c
 if (chdir("path/to/your/directory") == 0) {
@@ -436,7 +452,7 @@ if (chdir("path/to/your/directory") == 0) {
 
 ---
 
-### 💡 Tips
+## 💡 Tips
 
 - Always check if `opendir()` or `readdir()` returns `NULL`.
 - For filtering files only:  
@@ -445,7 +461,7 @@ if (chdir("path/to/your/directory") == 0) {
 
 ---
 
-# CE4. 📚 Linux Filesystem: Device Types, Inodes, and File Information
+# CE004. 📚 Linux Filesystem: Device Types, Inodes, and File Information
 
 ---
 
@@ -469,6 +485,7 @@ In **Linux**, the `DT_BLK` (**Directory Type: Block Device**) is defined in `dir
 ## 🛜 Linux Filesystem View
 
 Linux **treats everything as a file**, including:
+
 - Storage devices (block devices)
 - Serial ports (character devices)
 - Pipes (communication channels)
@@ -513,6 +530,7 @@ These **macros** are used to **check the type of a file** based on file mode inf
 | `S_ISLNK(mode)` | Symbolic link (soft link) |
 
 Example:
+
 ```c
 if (S_ISDIR(fileStat.st_mode)) {
     printf("It's a directory!\n");
@@ -527,12 +545,14 @@ if (S_ISDIR(fileStat.st_mode)) {
 - It fills a `struct stat` with many fields.
 
 Example:
+
 ```c
 struct stat fileStat;
 stat("myfile.txt", &fileStat);
 ```
 
 **Important fields:**
+
 - `fileStat.st_size` ➔ Size in bytes
 - `fileStat.st_mode` ➔ Type and permission bits
 - `fileStat.st_ino` ➔ Inode number (valid mainly in Unix/Linux)
@@ -573,12 +593,14 @@ stat("myfile.txt", &fileStat);
 
 ---
 
-# CE5. `goto` Statement in C
+# CE005. `goto` Statement in C
 
-## Definition:  
+## Definition  
+
 `goto` is a control statement used to **jump to a labeled part** of the program.
 
-## Syntax:
+## Syntax
+
 ```c
 goto label;
 // ...
@@ -586,7 +608,8 @@ label:
     // Code to execute
 ```
 
-### Example:
+### Example
+
 ```c
 #include <stdio.h>
 
@@ -604,48 +627,54 @@ label:
 }
 ```
 
-### Output:
-```
+### Output
+
+```text
 Jumped to the label!
 ```
 
 ## Why `goto` is Controversial?
+
 - ❌ Makes code hard to read ("spaghetti code").
 - ❌ Harder debugging and tracing.
 - ✅ Sometimes useful for error handling in C.
 
-## Pro Tip:
+## Pro Tip
+
 ✨ Avoid using `goto` unless absolutely necessary!
-<!-- CE6 -->
+
 ---
 
-# 1. Logical OR (`||`) vs Bitwise OR (`|`) in Recursion
+# CE006. Logical OR (`||`) vs Bitwise OR (`|`) in Recursion
 
 | Operator | Behavior                | Short-Circuits?        | Evaluates Both? |
 |----------|-------------------------|------------------------|-----------------|
-| `||`     | Logical OR (true/false) | ✅ Yes (Stops if true) | ❌ No          |
-| `|`      | Bitwise OR (bit-by-bit) | ❌ No                  | ✅ Yes         |
+| `\|\|`   | Logical OR (true/false) | ✅ Yes (Stops if true) | ❌ No          |
+| `\|`     | Bitwise OR (bit-by-bit) | ❌ No                  | ✅ Yes         |
 
-## Example (Logical OR `||`):
+## Example (Logical OR `||`)
+
 ```c
 if (funcA() || funcB()) {
     // funcB() called only if funcA() returns 0
 }
 ```
 
-## Example (Bitwise OR `|`):
+## Example (Bitwise OR `|`)
+
 ```c
 if (funcA() | funcB()) {
     // Both funcA() and funcB() are called
 }
 ```
 
-### Important:
+## Important
+
 - Infinite recursion can happen if **no function returns true** and you don't handle the base case properly! ⚡
 
 ---
 
-# CE7. Absolute Value Functions in C
+# CE007. Absolute Value Functions in C
 
 | Function   | Works With      | Header       |
 |------------|-----------------|--------------|
@@ -656,7 +685,8 @@ if (funcA() | funcB()) {
 | `fabsf(x)` | `float`         | `<math.h>`   |
 | `fabsl(x)` | `long double`   | `<math.h>`   |
 
-## Example:
+## Example
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
