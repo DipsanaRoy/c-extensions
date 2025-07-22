@@ -1,14 +1,9 @@
+# *Coming Soon!* 🥰
 
-*Coming Soon!*🥰
+<!-- # Kindly Read the Notes Before Proceeding with the Example Programs for Better Understanding
 
-<!-- ---
+## Useful Links
 
-# Kindly Read the Notes Before Proceeding with the Example Programs for Better Understanding
+- [CE008 Notes](https://github.com/DipsanaRoy/c-extensions/blob/main/CE008_Matrix/CE008_NOTES.md)
 
-## Useful Links:
-
-- [CE8 Notes](https://github.com/DipsanaRoy/c-extensions/blob/main/CE008_Matrix/CE8_NOTES.md)
-
-*Happy Learning!*
-
---- -->
+*Happy Learning!* -->
